@@ -1,0 +1,224 @@
+.login-page-wrapper {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Cloud background */
+  background: url('https://images.unsplash.com/photo-1534088568595-a066f410cbda?auto=format&fit=crop&w=2000&q=80') no-repeat center center / cover;
+  background-color: #d8eafe; /* Fallback light blue */
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Very light overlay — let the sky photo show through */
+.login-page-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255, 255, 255, 0.08);
+  z-index: 0;
+}
+
+/* Faint concentric circles */
+.bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  z-index: 0;
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.bg-circle-1 { width: 500px; height: 500px; }
+.bg-circle-2 { width: 800px; height: 800px; border-color: rgba(255, 255, 255, 0.25); }
+.bg-circle-3 { width: 1100px; height: 1100px; border-color: rgba(255, 255, 255, 0.15); }
+
+.login-glass-card {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 420px;
+  background: linear-gradient(160deg, rgba(255,255,255,0.82) 0%, rgba(210,232,255,0.62) 100%);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 24px;
+  padding: 48px 36px;
+  box-shadow: 0 24px 48px rgba(30,80,160,0.14), inset 0 0 0 1px rgba(255,255,255,0.6);
+  text-align: center;
+}
+
+.login-top-icon {
+  width: 52px;
+  height: 52px;
+  background: #fff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06), inset 0 0 0 1px rgba(0, 0, 0, 0.02);
+  color: #1a1a1a;
+}
+
+.login-title {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.5px;
+}
+
+.login-subtitle {
+  margin: 0 0 28px;
+  font-size: 13.5px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon-left {
+  position: absolute;
+  left: 14px;
+  color: #9ca3af;
+  pointer-events: none;
+  display: flex;
+}
+
+.input-icon-right {
+  position: absolute;
+  right: 14px;
+  color: #9ca3af;
+  cursor: pointer;
+  display: flex;
+  background: none;
+  border: none;
+  padding: 0;
+  outline: none;
+}
+
+.login-input {
+  width: 100%;
+  padding: 14px 16px 14px 44px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: rgba(243, 244, 246, 0.8);
+  font-size: 14px;
+  color: #111827;
+  outline: none;
+  transition: all 0.2s;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.02);
+  font-family: inherit;
+  margin: 0; /* Reset global margin */
+}
+
+.login-input:focus {
+  background: #fff;
+  border-color: #d1d5db;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+.login-input::placeholder {
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.forgot-password {
+  text-align: right;
+  font-size: 12.5px;
+  color: #4b5563;
+  text-decoration: none;
+  margin-top: -4px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.forgot-password:hover {
+  color: #111827;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  background: #1c1c1c;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin: 0;
+}
+
+.login-btn:hover {
+  background: #333;
+}
+
+.login-divider {
+  display: flex;
+  align-items: center;
+  margin: 24px 0;
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+.login-divider::before,
+.login-divider::after {
+  content: '';
+  flex: 1;
+  border-top: 1px dotted #cbd5e1;
+}
+
+.login-divider span {
+  padding: 0 12px;
+}
+
+.social-btns {
+  display: flex;
+  gap: 12px;
+}
+
+.social-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+
+.social-btn:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.login-error {
+  margin-top: 4px;
+  color: #dc2626;
+  font-size: 13px;
+  background: #fee2e2;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #fecaca;
+}
